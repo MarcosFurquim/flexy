@@ -1,0 +1,7 @@
+
+echo '---> Install Composer'
+if [ ! -f composer.phar ]; then
+curl https://getcomposer.org/installer | php
+fi
+echo "---> DEV env install"
+php composer.phar install --no-interaction --no-ansi

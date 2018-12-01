@@ -1,0 +1,6 @@
+{
+    "name": "Flexy",
+    "require": {
+        "symfony/symfony":"4.2.*"
+    }
+}
