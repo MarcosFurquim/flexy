@@ -1,7 +1,41 @@
 
-echo '---> Install Composer'
-if [ ! -f composer.phar ]; then
-curl https://getcomposer.org/installer | php
+#!/bin/bash
+set -e
+
+if [ -f composer.json ]; then
+    echo "---> Found 'composer.json', installing dependencies using composer.phar... "
+    if [ ! -f composer.phar ]; then
+        echo '---> Install Composer'
+        curl https://getcomposer.org/installer | php
+    fi
+    if [ -d vendor ]; then
+        echo "---> packages update"
+        #php composer.phar update --no-interaction --no-ansi
+    else
+        echo "---> packages install"
+        php composer.phar install --no-interaction --no-ansi
+    fi  
 fi
-echo "---> DEV env install"
-php composer.phar install --no-interaction --no-ansi
+echo "---> vendor of Syphony"
+cd flexy
+if [ -f composer.json ]; then
+    echo "---> Found 'composer.json', installing dependencies using composer.phar... "
+    if [ ! -f composer.phar ]; then
+        echo '---> Install Composer'
+        curl https://getcomposer.org/installer | php
+    fi
+    if [ -d vendor ]; then
+        echo "---> packages update"
+        #php composer.phar update --no-interaction --no-ansi
+    else
+        echo "---> packages install"
+        php composer.phar install --no-interaction --no-ansi
+    fi 
+fi
+# export APACHE_DOCUMENT_ROOT=${APACHE_DOCUMENT_ROOT}
+# a2enmod rewrite
+ #sed -ri -e 's!/var/www/html!$APACHE_DOCUMENT_ROOT!g' /etc/apache2/sites-available/*.conf
+ #sed -ri -e 's!/var/www/!$APACHE_DOCUMENT_ROOT!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+# service apache2 restart
+#/usr/local/bin/apache2-foreground
+php bin/console server:run 0.0.0.0:80
