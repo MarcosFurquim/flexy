@@ -32,10 +32,8 @@ if [ -f composer.json ]; then
         php composer.phar install --no-interaction --no-ansi
     fi 
 fi
-# export APACHE_DOCUMENT_ROOT=${APACHE_DOCUMENT_ROOT}
-# a2enmod rewrite
- #sed -ri -e 's!/var/www/html!$APACHE_DOCUMENT_ROOT!g' /etc/apache2/sites-available/*.conf
- #sed -ri -e 's!/var/www/!$APACHE_DOCUMENT_ROOT!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+
 # service apache2 restart
 #/usr/local/bin/apache2-foreground
-php bin/console server:run 0.0.0.0:80
+#php bin/console server:run 0.0.0.0:80
+php -S 0.0.0.0:80 -t public

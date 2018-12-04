@@ -14,7 +14,7 @@ services:
       - ".:/var/www/html/:rw"
     environment:
       VIRTUAL_HOST: local.flexy.com.br
-      APACHE_DOCUMENT_ROOT: '/var/www/html/'
+      pwd: '/var/www/html/'
       ENV_ALIAS: 'dev'
       #DATABASE
       DB_HOST: 'local.db'
@@ -23,6 +23,10 @@ services:
       DB_USERNAME: 'root'
       DB_PASSWORD: 'root'
     build: .docker/
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
     depends_on:
       - local.db
     command: ./assemble
@@ -34,7 +38,8 @@ services:
     image: mariadb
     volumes:
       - "./db/local:/var/lib/mysql"
-    environment:
+      - "./migration:/var/migrations"
+    environment:dck
       VIRTUAL_HOST: local.db
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: flexy
@@ -42,6 +47,7 @@ services:
       - "3306:3306"
     expose:
       - "3306"
+    command: ./db.seed
 
   local.pma:
     image: phpmyadmin/phpmyadmin
