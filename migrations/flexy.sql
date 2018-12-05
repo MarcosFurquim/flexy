@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Versão 4541
+# Versï¿½o 4541
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
 # Host: local.db (MySQL 5.5.5-10.3.10-MariaDB-1:10.3.10+maria~bionic)
 # Base de Dados: flexy
-# Tempo de Geração: 2018-12-04 21:55:23 +0000
+# Tempo de Geraï¿½ï¿½o: 2018-12-04 21:55:23 +0000
 # ************************************************************
 
 

@@ -38,8 +38,9 @@ services:
     image: mariadb
     volumes:
       - "./db/local:/var/lib/mysql"
-      - "./migration:/var/migrations"
-    environment:dck
+      - "./migrations:/var/migrations"
+      - "./migrations:/docker-entrypoint-initdb.d/:ro"
+    environment:
       VIRTUAL_HOST: local.db
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: flexy
@@ -47,7 +48,7 @@ services:
       - "3306:3306"
     expose:
       - "3306"
-    command: ./db.seed
+    #build: ./migrations/
 
   local.pma:
     image: phpmyadmin/phpmyadmin
