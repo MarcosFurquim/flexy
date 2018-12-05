@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    {% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Crud products!{% endblock %}</title>
+            <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
+    </head>
+    {% endblock head %}
+    <body>
+        {% block body %}
+        <div class="container">
+            <h1>Edit Product</h1>
+            <form>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Enter title" value="{{product.title}}">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" rows="3">{{product.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="text" class="form-control" id="stock" placeholder="Stock" value="{{product.stock}}">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control-file" id="image" aria-describedby="image">
+                    <small id="image" class="form-text text-muted">Image for product.</small>
+                </div>
+                <div class="form-group">
+                    <label for="tag">Tag</label>
+                    <select class="form-control" id="tag">
+                    <option>1</option>
+                    </select>
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+        {% endblock %}
+        {% block javascripts %}
+            <script src="/assets/js/jquery-3.3.1.min.js"></script>
+            <script src="/assets/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </body>
+</html>

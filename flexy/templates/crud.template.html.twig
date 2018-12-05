@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    {% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Crud products!{% endblock %}</title>
+            <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
+    </head>
+    {% endblock head %}
+    <body>
+        {% block body %}
+        <div class="container">
+            <h1>CRUD Products</h1>
+            <table class="table thead-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.title }}</td>
+                        <td><span class="oi oi-pencil"></span></td>
+                        <td><span class="oi oi-trash"></span></td>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        {% endblock %}
+        {% block javascripts %}
+            <script src="/assets/js/jquery-3.3.1.min.js"></script>
+            <script src="/assets/js/bootstrap.min.js"></script>
+        {% endblock %}
+    </body>
+</html>
