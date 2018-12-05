@@ -2,20 +2,20 @@
 #!/bin/bash
 set -e
 
-if [ -f composer.json ]; then
-    echo "---> Found 'composer.json', installing dependencies using composer.phar... "
-    if [ ! -f composer.phar ]; then
-        echo '---> Install Composer'
-        curl https://getcomposer.org/installer | php
-    fi
-    if [ -d vendor ]; then
-        echo "---> packages update"
-        #php composer.phar update --no-interaction --no-ansi
-    else
-        echo "---> packages install"
-        php composer.phar install --no-interaction --no-ansi
-    fi  
-fi
+# if [ -f composer.json ]; then
+#     echo "---> Found 'composer.json', installing dependencies using composer.phar... "
+#     if [ ! -f composer.phar ]; then
+#         echo '---> Install Composer'
+#         curl https://getcomposer.org/installer | php
+#     fi
+#     if [ -d vendor ]; then
+#         echo "---> packages update"
+#         #php composer.phar update --no-interaction --no-ansi
+#     else
+#         echo "---> packages install"
+#         php composer.phar install --no-interaction --no-ansi
+#     fi  
+# fi
 echo "---> vendor of Syphony"
 cd flexy
 if [ -f composer.json ]; then
