@@ -18,14 +18,14 @@
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
-                        <th colspan="2">Actions</th>
+                        <th colspan="2" align="center">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for product in products %}
                         <td>{{ product.id }}</td>
                         <td>{{ product.title }}</td>
-                        <td><span class="oi oi-pencil"></span></td>
+                        <td><a href="/products/edit/{{product.id}}" class="oi oi-pencil"></a></td>
                         <td><span class="oi oi-trash"></span></td>
                     {% endfor %}
                 </tbody>
