@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CrudController extends AbstractController
 {
     /**
+    * @Route("/");
     * @Route("/products")
     */
     public function index(ProductRepository $productRepository)
