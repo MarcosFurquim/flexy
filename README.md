@@ -2,7 +2,7 @@
 
 ## How install
 
-1. You nedd Docker installed in your computer
+1. First all, you need Docker installed in your computer
 2. after that, just execute docker-compose up on root (where are the **docker-compose.yml** file)
 3. The Docker will start build next images:
     - nginx-proxy
