@@ -4,7 +4,7 @@
 
 1. First all, you need Docker installed in your computer
 2. after that, just execute docker-compose up on root (where are the **docker-compose.yml** file)
-3. The Docker will start build next images:
+3. The Docker will start build these images:
     - nginx-proxy
     - flexy (application struture, the code!)
     - mariadb (where all storage here!)
