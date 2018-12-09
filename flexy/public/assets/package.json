@@ -1,0 +1,29 @@
+{
+  "name": "flexy",
+  "version": "1.0.0",
+  "description": "Flexy dependecies",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markinfurkin/flexy.git"
+  },
+  "author": "Marcos Furquim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markinfurkin/flexy/issues"
+  },
+  "homepage": "https://github.com/markinfurkin/flexy#readme"
+}

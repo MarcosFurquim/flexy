@@ -1,0 +1,13 @@
+.table-edit .oi {
+    cursor: pointer;
+    text-decoration: none;
+}
+.table-edit .oi.oi-trash {
+    color: #dd3939;
+}
+.table-edit .oi.oi-trash:hover {
+    color: #8f3737;
+}
+.table-edit .oi.oi-pencil:hover {
+    color: #0e56a5;
+}
