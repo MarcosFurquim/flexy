@@ -13,9 +13,24 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Product[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class ProductRepository extends ServiceEntityRepository {
+    /**
+
+    */
     public function __construct(RegistryInterface $registry) {
         parent::__construct($registry, Product::class);
     }
+
+    public function transform(Product $product)
+{
+    return [
+        'id'    => (int) $product->getId(),
+        'title' => (string) $product->getTitle(),
+        'description' => (string) $product->getDescription(),
+        'image' => (string) $product->getImage(),
+        'stock' => (string) $product->getStock(),
+        'tag' => (int) $product->getTag()
+    ];
+}
 
     public function get($productId) {
         return  $this->findOneBy(array('id' =>$productId));

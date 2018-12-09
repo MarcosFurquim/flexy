@@ -51,7 +51,7 @@ class ApiController
     /**
      * Sets an error message and returns a JSON response
      *
-     * @param string $errors
+     * @param string $errors error
      *
      * @return Symfony\Component\HttpFoundation\JsonResponse
      */
@@ -67,7 +67,7 @@ class ApiController
     /**
      * Returns a 401 Unauthorized http response
      *
-     * @param string $message
+     * @param string $message message
      *
      * @return Symfony\Component\HttpFoundation\JsonResponse
      */
@@ -78,7 +78,7 @@ class ApiController
     /**
      * Returns a 422 Unprocessable Entity
      *
-     * @param string $message
+     * @param string $message message
      *
      * @return Symfony\Component\HttpFoundation\JsonResponse
      */
@@ -90,7 +90,7 @@ class ApiController
     /**
      * Returns a 404 Not Found
      *
-     * @param string $message
+     * @param string $message mesage
      *
      * @return Symfony\Component\HttpFoundation\JsonResponse
      */
@@ -102,12 +102,22 @@ class ApiController
     /**
      * Returns a 201 Created
      *
-     * @param array $data
+     * @param array $data data
      *
      * @return Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function respondCreated($data = [])
-    {
+    public function respondCreated($data = []) {
         return $this->setStatusCode(201)->respond($data);
+    }
+
+    /**
+     * Returns a 200 OK
+     *
+     * @param array $data data
+     *
+     * @return Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function respondOk($data = []) {
+        return $this->setStatusCode(200)->respond($data);
     }
 }
