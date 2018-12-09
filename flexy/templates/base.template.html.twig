@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>{% block title %}{% endblock %}</title>
+            <link rel="stylesheet" href="/assets/css/dist/flexy.min.css">
+        {% endblock head %}
+    </head>
+    <body>
+        {% block body %}
+    
+        
+        {% endblock %}
+        {% block javascripts %}
+            <script src="/assets/js/dist/flexy.js"></script>
+        {% endblock %}
+    </body>
+</html>

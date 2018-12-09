@@ -1,20 +1,20 @@
 {% extends "base.template.html.twig" %}
-{% block title %}Edit Product{% endblock %}
+{% block title %}New Product{% endblock %}
 {% block body %}
 <div class="container">
-    <h1>Edit Product</h1>
-    <form>
+    <h1>New Product</h1>
+    <form id="newProduct" method="POST" action="/products/createNew">
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="{{product.title}}">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="">
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3">{{product.description}}</textarea>
+            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
         </div>
         <div class="form-group">
             <label for="stock">Stock</label>
-            <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock" value="{{product.stock}}">
+            <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock" value="">
         </div>
         <div class="form-group">
             <label for="image">Image</label>
@@ -27,7 +27,7 @@
             <option>1</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </div>
 

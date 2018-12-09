@@ -1,0 +1,23 @@
+{% extends "base.template.html.twig" %}
+
+{% block title %}Tags{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Tags</h1>
+        <table class="table thead-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th colspan="2" align="center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tag in tags %}
+                    <td>{{ tag.id }}</td>
+                    <td><a href="/products/edit/{{tag.id}}" class="oi oi-pencil"></a></td>
+                    <td><span class="oi oi-trash"></span></td>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
