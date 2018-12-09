@@ -3,7 +3,7 @@
 ## How install
 
 1. First all, you need Docker installed in your computer
-2. after that, just execute docker-compose up on root (where are the **docker-compose.yml** file)
+2. after that, just execute **docker-compose up** on root (where are the **docker-compose.yml** file) inside prompt or bash shell.
 3. The Docker will start build these images:
     - nginx-proxy
     - flexy (application struture, the code!)
