@@ -11,27 +11,22 @@ function getFormData($form,json){
 
     return JSON.stringify(indexed_array);
 }
+function readURL(input) {
 
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#uploadedImage img').attr('src', e.target.result);
+        $('#uploadNewImage').hide();
+        $('#uploadedImage').show();
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
 
 $(function(){
     form = function () {
-        // $("#newProduct [type=submit]").on("click",function(e) {
-        //     e.preventDefault();
-        //     $form = $(this).closest('form');
-        //     console.log($form);
-        //     $formData = getFormData($form);
-        //     console.log($formData);
-        //     $.ajax({
-        //         url: "/api/products",
-        //         type: 'post',
-        //         dataType: 'json',
-        //         contentType: 'application/json',
-        //         data: $formData
-        //       }).done(function() {
-        //         $( this ).addClass( "done" );
-        //       });
-        // });
-        $('.table-edit .oi-trash').on('click',function() {
+        $('.table-edit .btn-delete').on('click',function() {
             let id = $(this).closest('tr').attr('data-id');
             $confirmModal = $('#confirmModal');
             $confirmModal.modal('show');
@@ -47,12 +42,40 @@ $(function(){
                 });
             });
         });
-
+        $("input#image").change(function() {
+            readURL(this);
+          });
         $('#uploadedImage .oi-x').on('click',function() {
             $(this).closest('#uploadedImage').hide().siblings('#uploadNewImage').show();
+        });
+        $("#newProduct .btn-back, #editProduct .btn-back").on('click',function(e) {
+            e.preventDefault();
+            window.location.replace("/products");
+        });
+        $("#create-tag").on('click',function() {
+            $.ajax({
+                url: "/api/tags/create",
+                type: 'post'
+            }).done(function(resp) {
+                alert(resp);
+                window.location.replace("/tags");
+            });
+        })
+    }
+    formValidate = function() {
+        $("#newProduct, #editProduct").validate({
+            submitHandler: function(form) {
+                form.submit();
+              },
+              rules: {
+                title: {
+                  required: true,
+                  maxlength: 6
+                }
+            }
         });
     }
     
     form();
-    
+    formValidate();
 });
