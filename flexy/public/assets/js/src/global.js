@@ -47,6 +47,10 @@ $(function(){
                 });
             });
         });
+
+        $('#uploadedImage .oi-x').on('click',function() {
+            $(this).closest('#uploadedImage').hide().siblings('#uploadNewImage').show();
+        });
     }
     
     form();
