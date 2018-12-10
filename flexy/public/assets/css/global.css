@@ -11,3 +11,23 @@
 .table-edit .oi.oi-pencil:hover {
     color: #0e56a5;
 }
+#uploadedImage {
+    width: 20%;
+    position: relative;
+}
+#uploadedImage img {
+    width: 100%;
+}
+#uploadedImage .oi-x {
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #544c4c;
+}
+#uploadNewImage {
+    display: none;
+}
