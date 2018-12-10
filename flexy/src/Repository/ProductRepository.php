@@ -20,17 +20,16 @@ class ProductRepository extends ServiceEntityRepository {
         parent::__construct($registry, Product::class);
     }
 
-    public function transform(Product $product)
-{
-    return [
-        'id'    => (int) $product->getId(),
-        'title' => (string) $product->getTitle(),
-        'description' => (string) $product->getDescription(),
-        'image' => (string) $product->getImage(),
-        'stock' => (string) $product->getStock(),
-        'tag' => (int) $product->getTag()
-    ];
-}
+    public function transform(Product $product) {
+        return [
+            'id'    => (int) $product->getId(),
+            'title' => (string) $product->getTitle(),
+            'description' => (string) $product->getDescription(),
+            'image' => (string) $product->getImage(),
+            'stock' => (string) $product->getStock(),
+            'tag' => (int) $product->getTag()
+        ];
+    }
 
     public function get($productId) {
         return  $this->findOneBy(array('id' =>$productId));

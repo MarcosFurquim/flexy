@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TagRepository;
+use App\Entity\Tag;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -38,7 +40,8 @@ class Product
     private $stock;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="Tag", inversedBy="products")
+     * @ORM\JoinColumn(name="tag", referencedColumnName="id")
      */
     private $tag;
 
@@ -95,12 +98,12 @@ class Product
         return $this;
     }
 
-    public function getTag(): ?int
+    public function getTag(): ?Tag
     {
         return $this->tag;
     }
 
-    public function setTag(int $tag): self
+    public function setTag(?Tag $tag): self
     {
         $this->tag = $tag;
 
