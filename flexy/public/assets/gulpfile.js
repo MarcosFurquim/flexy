@@ -9,6 +9,7 @@ gulp.task('scripts', function() {
 
   var files = [
     'js/src/jquery-3.3.1.min.js',
+    'js/src/jquery.validate.min.js',
     'js/src/bootstrap.min.js',
     'js/src/global.js'
   ];
