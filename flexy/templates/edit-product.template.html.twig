@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container">
     <h1>Edit Product</h1>
-    <form>
+    <form id="editProduct" method="POST" action="/products/editProduct" enctype='multipart/form-data' >
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="{{product.title}}">
@@ -18,8 +18,14 @@
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" class="form-control-file" id="image" name="image" aria-describedby="image">
-            <small id="image" class="form-text text-muted">Image for product.</small>
+            <div id="uploadedImage">
+                <img src="/uploads/{{product.image}}" />
+                <span class="oi oi-x"></span>
+            </div>
+            <div id="uploadNewImage">
+                <input type="file" class="form-control-file" id="image" name="image" aria-describedby="image">
+                <small id="image" class="form-text text-muted">Image for product.</small>
+            </div>
         </div>
         <div class="form-group">
             <label for="tag">Tag</label>
