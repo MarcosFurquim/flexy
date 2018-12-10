@@ -22,8 +22,8 @@ $ docker-compose up
 
 ## What was used:
 * [Symfony](https://symfony.com) - PHP Framework
-* [Twig] - Twig is a modern template engine for PHP
-* [node.js] - evented I/O for the backend
-* [Gulp] - the streaming build system
-* [jQuery] -  famous framework for Javascript
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+* [Twig](https://twig.symfony.com/) - Twig is a modern template engine for PHP
+* [node.js](https://nodejs.org) - evented I/O for the backend
+* [Gulp](https://gulpjs.com/) - the streaming build system
+* [jQuery](https://jquery.com/) -  famous framework for Javascript
+* [Twitter Bootstrap(https://getbootstrap.com/) - great UI boilerplate for modern web apps
