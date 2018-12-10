@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Versï¿½o 4541
+# Versão 4541
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
-# Host: local.db (MySQL 5.5.5-10.3.10-MariaDB-1:10.3.10+maria~bionic)
+# Host: local.db (MySQL 5.5.5-10.3.11-MariaDB-1:10.3.11+maria~bionic)
 # Base de Dados: flexy
-# Tempo de Geraï¿½ï¿½o: 2018-12-04 21:55:23 +0000
+# Tempo de Geração: 2018-12-10 04:57:58 +0000
 # ************************************************************
 
 
@@ -37,6 +37,15 @@ CREATE TABLE `Product` (
   CONSTRAINT `Product_ibfk_1` FOREIGN KEY (`tag`) REFERENCES `Tag` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `Product` WRITE;
+/*!40000 ALTER TABLE `Product` DISABLE KEYS */;
+
+INSERT INTO `Product` (`id`, `title`, `description`, `image`, `stock`, `tag`)
+VALUES
+	(1,'Flexy','Flexy Description','flexy.png','5',3);
+
+/*!40000 ALTER TABLE `Product` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump da tabela Tag
@@ -49,6 +58,19 @@ CREATE TABLE `Tag` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `Tag` WRITE;
+/*!40000 ALTER TABLE `Tag` DISABLE KEYS */;
+
+INSERT INTO `Tag` (`id`)
+VALUES
+	(1),
+	(2),
+	(3),
+	(4),
+	(5);
+
+/*!40000 ALTER TABLE `Tag` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
