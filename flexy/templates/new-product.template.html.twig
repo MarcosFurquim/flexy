@@ -2,11 +2,12 @@
 {% block title %}New Product{% endblock %}
 {% block body %}
 <div class="container">
-    <h1>New Product</h1>
+    <h2>New Product</h2>
+    <hr/>
     <form id="newProduct" method="POST" action="/products/createNew" enctype='multipart/form-data' >
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" value="" required>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
@@ -14,20 +15,32 @@
         </div>
         <div class="form-group">
             <label for="stock">Stock</label>
-            <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock" value="">
+            <input type="text" class="form-control" id="stock" name="stock" placeholder="Stock" value="" required>
         </div>
         <div class="form-group">
             <label for="image">Image</label>
-            <input type="file" class="form-control-file" id="image" name="image" aria-describedby="image">
-            <small id="image" class="form-text text-muted">Image for product.</small>
+            <div id="uploadedImage">
+                <img src="" />
+                <span class="oi oi-x"></span>
+            </div>
+            <div id="uploadNewImage">
+                <input type="file" class="form-control-file" id="image" name="image" aria-describedby="image" required>
+                <small id="image" class="form-text text-muted">Image for product.</small>
+            </div>
         </div>
         <div class="form-group">
             <label for="tag">Tag</label>
-            <select class="form-control" id="tag" name="tag">
-            <option>1</option>
+            <select class="form-control" id="tag" name="tag" required>
+                {% for tag in tags %}
+                    <option value="{{tag.id}}">{{tag.id}}</option>
+                {% endfor %}
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <hr/>
+        <div class="btn-group d-flex" role="group" aria-label="Basic example">
+            <button type="submit" class="btn btn-primary w-100">Create</button>
+            <button class="btn btn-danger btn-back w-100">Back</button>
+        </div>
     </form>
 </div>
 

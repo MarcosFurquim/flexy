@@ -1,23 +1,25 @@
 {% extends "base.template.html.twig" %}
-
 {% block title %}Tags{% endblock %}
 {% block body %}
-    <div class="container">
-        <h1>Tags</h1>
-        <table class="table thead-dark table-striped table-hover">
+<div class="container">
+    <h1>Tags</h1>
+    <div class="btn-wraper f-right"><button id="create-tag" role="button" class="btn btn-primary">New</button></div>
+    <div class="table-responsive">
+        <table class="table thead-dark table-striped table-hover table-edit">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th colspan="2" align="center">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {% for tag in tags %}
-                    <td>{{ tag.id }}</td>
-                    <td><a href="/products/edit/{{tag.id}}" class="oi oi-pencil"></a></td>
-                    <td><span class="oi oi-trash"></span></td>
+                    <tr data-id="{{ tag.id }}">
+                        <td>{{ tag.id }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+</div>
+{% include 'includes/modal-confirm.html.twig' with {'bodyModal': 'You are you sure you would like to delete this tag?'} %}
 {% endblock %}
