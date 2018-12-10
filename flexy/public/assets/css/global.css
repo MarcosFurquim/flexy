@@ -1,15 +1,19 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    /* padding: 30px 15px; */
+}
 .table-edit .oi {
     cursor: pointer;
     text-decoration: none;
 }
 .table-edit .oi.oi-trash {
-    color: #dd3939;
+    /* color: #dd3939; */
 }
 .table-edit .oi.oi-trash:hover {
-    color: #8f3737;
+    /* color: #8f3737; */
 }
 .table-edit .oi.oi-pencil:hover {
-    color: #0e56a5;
+    /* color: #0e56a5; */
 }
 #uploadedImage {
     width: 20%;
@@ -28,6 +32,26 @@
     border-radius: 50%;
     border: 1px solid #544c4c;
 }
-#uploadNewImage {
+form:not(#newProduct) #uploadNewImage,
+form#newProduct #uploadedImage {
     display: none;
+}
+.td-actions  {
+    width: 120px;
+}
+.f-right {
+    float: right;
+
+}
+.f-right:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.btn-wraper {
+    margin-bottom: 10px;
+}
+label.error {
+    color: #bb1919;
+    font-weight: 700;
 }
