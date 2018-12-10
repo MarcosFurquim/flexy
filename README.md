@@ -26,4 +26,4 @@ $ docker-compose up
 * [node.js](https://nodejs.org) - evented I/O for the backend
 * [Gulp](https://gulpjs.com/) - the streaming build system
 * [jQuery](https://jquery.com/) -  famous framework for Javascript
-* [Twitter Bootstrap(https://getbootstrap.com/) - great UI boilerplate for modern web apps
+* [Twitter Bootstrap](https://getbootstrap.com/) - great UI boilerplate for modern web apps
