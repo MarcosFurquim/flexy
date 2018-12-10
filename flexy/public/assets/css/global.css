@@ -55,3 +55,7 @@ label.error {
     color: #bb1919;
     font-weight: 700;
 }
+.container {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
