@@ -5,7 +5,7 @@ gulp.task('default', ['scripts', 'lint', 'styles'], function() {});
 gulp.task('scripts', function() {
   var concat = require('gulp-concat');
   var stripDebug = require('gulp-strip-debug');
-  var uglify = require('gulp-uglify');
+  var uglify = require('gulp-uglify-es').default;
 
   var files = [
     'js/src/jquery-3.3.1.min.js',
@@ -16,8 +16,8 @@ gulp.task('scripts', function() {
 
   gulp.src(files)
     .pipe(concat('flexy.js'))
-    //.pipe(stripDebug())
-    //.pipe(uglify())
+    .pipe(stripDebug())
+    .pipe(uglify())
     .pipe(gulp.dest('js/dist'));
 });
 
@@ -30,7 +30,8 @@ gulp.task('styles', function() {
   var files = [
     'css/bootstrap.min.css',
     'css/open-iconic-bootstrap.min.css',
-    'css/global.css'
+    'css/global.css',
+    'css/responsive.css'
   ];
 
   gulp.src(files)
