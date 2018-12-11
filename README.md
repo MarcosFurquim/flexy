@@ -2,23 +2,27 @@
 
 ## How install
 
-1. First all, you need Docker installed in your computer
-2. after that, just execute **docker-compose up** on root (where are the **docker-compose.yml** file) inside prompt or bash shell.
+1. First of all, you need Docker installed in your computer
+
+2. after that, just execute **docker-compose up** on project rootfolder using terminal or any or bash shell.
 ```sh
 $ docker-compose up
 ```
-3. The Docker will start build these images:
+
+3. Docker will start building this images:
     - nginx-proxy
     - flexy (application struture, the code!)
     - mariadb (where all storage here!)
-    - phpMyAdmin (only for use if you need one user client for db ;))
-4. After all done, you need add in your hosts
-    - In Windows stay  in  **C\Windows\System32\Drivers\etc\hosts**
-    - In Linux/Mac here **/etc/hosts**
+    - phpMyAdmin (used only if you do not have any db client gui ;) ) 
 
-    ### ADD this line
+4. After all done, you will need to add in your hosts
+    - In Windows **C\Windows\System32\Drivers\etc\hosts**
+    - In Linux/Mac **/etc/hosts**
+
+    ### This line
     **127.0.0.1     local.flexy.com.br**
-5.  All Done, only acess in your browser: **local.flexy.com.br**
+
+5.  All Done, just acess this link in your browser: **local.flexy.com.br**
 
 ## What was used:
 * [Symfony](https://symfony.com) - PHP Framework
